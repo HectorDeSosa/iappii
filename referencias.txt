@@ -1,0 +1,22 @@
+#Entorno virtual
+https://docs.python.org/es/3/tutorial/venv.html
+
+#Variable de entorno
+https://pypi.org/project/python-dotenv/
+
+#Guia rapida
+https://aistudio.google.com/docs/get-started
+
+
+https://github.com/google-gemini/gemini-api-quickstart
+
+#Modelos
+https://ai.google.dev/gemini-api/docs/interactions-overview?hl=es-419
+
+
+#Dashboard
+https://aistudio.google.com/usage?timeRange=last-28-days
+
+
+#Claude
+https://platform.claude.com/docs/es/cli-sdks-libraries/sdks/python
