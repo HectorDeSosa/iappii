@@ -1,29 +1,15 @@
-from google import genai
-from google.genai import types
-import os
-from dotenv import load_dotenv
-load_dotenv()
-from db import obtener_productos, buscar_productos
+import cv2
+import pytesseract
+#Ejecutable de Tesseract OCR
+#https://github.com/UB-Mannheim/tesseract/wiki
 
+# Ubicación de Tesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+imagen = cv2.imread("prueba.png")
 
-# Configurar la clave de API
-client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+print(type(imagen))
+print(imagen.shape)
 
+texto = pytesseract.image_to_string(imagen)
 
-# Generar consulta para obtener productos de la base de datos
-productos = buscar_productos("Monitor")
-productos = buscar_productos("Lenovo")
-productos = buscar_productos("Mouse")
-
-#ingresar la consulta del cliente
-consulta_cliente = input("Ingrese su consulta: ")
-productos = buscar_productos(consulta_cliente)
-
-response = client.models.generate_content(
-    model="gemini-3.6-flash",
-    contents=f"Estos son los productos disponibles: {productos}. Respondé al cliente utilizando únicamente la información proporcionada"    
-    #contents=f"Productos:{productos} ¿Qué productos Lenovo tenemos?"
-    #contents=f"Productos:{productos} ¿Qué mouse tenemos disponible?
-    #contents=f"Productos:{productos} ¿Qué productos de la categoría 'Auriculares' tenemos?"
-)
-print(response.text)   
+print(texto)
