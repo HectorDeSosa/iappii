@@ -1,15 +1,11 @@
 import cv2
-import pytesseract
-#Ejecutable de Tesseract OCR
-#https://github.com/UB-Mannheim/tesseract/wiki
-
-# Ubicación de Tesseract
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-imagen = cv2.imread("prueba.png")
-
-print(type(imagen))
-print(imagen.shape)
-
-texto = pytesseract.image_to_string(imagen)
-
-print(texto)
+captura = cv2.VideoCapture(0)
+while (captura.isOpened()):
+  ret, imagen = captura.read()
+  if ret == True:
+    cv2.imshow('video', imagen)
+    if cv2.waitKey(1) & 0xFF == ord('s'):
+      break
+  else: break
+captura.release()
+cv2.destroyAllWindows()
