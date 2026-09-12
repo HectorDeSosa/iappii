@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+X_test_sat4.csv.zip
+X_train_sat4.csv.zip
+y_test_sat4.csv
+y_train_sat4.csv.zip
+
+
+
