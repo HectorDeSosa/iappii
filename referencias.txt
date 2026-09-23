@@ -1,2 +1,13 @@
 #https://www.kaggle.com/code/arpandhatt/satellite-image-classification/notebook
 
+py install 3.12
+
+py -3.12 -m venv venv312
+python -m pip install --upgrade pip
+python -m pip install tensorflow pandas numpy matplotlib scikit-learn jupyter ipykernel
+venv312\Scripts\activate
+
+Instalar todo lo necesario
+
+Registrar como kernel
+python -m ipykernel install --user --name=venv312 --display-name "Python 3.12 - TensorFlow"
